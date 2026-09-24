@@ -5,9 +5,9 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,33 +15,32 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 <title>Santhiya | Full Stack Developer</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root{
-    --bg:#0b0f1a;
-    --card:#151c2f;
-    --nav:#111827;
-    --primary:#a855f7;
-    --secondary:#ec4899;
-    --text:#ffffff;
-    --light:#cbd5e1;
+    --bg:#f6f7f9;
+    --surface:#ffffff;
+    --ink:#151922;
+    --ink-soft:#5a6270;
+    --border:#e3e6eb;
+    --primary:#1c3d5a;
+    --accent:#b9791a;
 }
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Inter',sans-serif;
     scroll-behavior:smooth;
 }
 
+h1,h2,h3,nav h2{
+    font-family:'Space Grotesk',sans-serif;
+}
+
 body{
-    background:linear-gradient(rgba(11,15,26,.92),rgba(11,15,26,.95)),
-    url("images/bg.jpg");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    color:var(--text);
+    background:var(--bg);
+    color:var(--ink);
 }
 
 /*================ NAVBAR ================*/
@@ -53,83 +52,119 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 8%;
-    background:rgba(17,24,39,.85);
-    backdrop-filter:blur(12px);
+    padding:20px 8%;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
     z-index:1000;
 }
 
 nav h2{
-    font-size:32px;
-    color:var(--primary);
+    font-size:21px;
+    font-weight:600;
+    letter-spacing:-.02em;
+    color:var(--ink);
 }
 
 nav ul{
     display:flex;
     list-style:none;
-    gap:30px;
+    gap:34px;
 }
 
 nav ul li a{
     text-decoration:none;
-    color:white;
-    transition:.3s;
+    color:var(--ink-soft);
+    font-size:14.5px;
+    font-weight:500;
+    transition:.2s;
+    border-bottom:2px solid transparent;
+    padding-bottom:4px;
 }
 
 nav ul li a:hover{
-    color:var(--secondary);
+    color:var(--primary);
+    border-bottom-color:var(--accent);
 }
 
 /*================ HERO ================*/
 
 .hero{
-    min-height:100vh;
+    min-height:88vh;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:80px 8%;
-    gap:50px;
+    padding:70px 8%;
+    gap:60px;
+    max-width:1200px;
+    margin:0 auto;
 }
 
 .content{
-    flex:1;
+    flex:1.2;
 }
 
 .content h3{
-    color:var(--secondary);
-    font-size:22px;
+    color:var(--accent);
+    font-family:'Inter',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:14px;
 }
 
 .content h1{
-    font-size:65px;
-    margin:10px 0;
+    font-size:52px;
+    font-weight:700;
+    letter-spacing:-.02em;
+    margin:0 0 6px;
+    color:var(--ink);
 }
 
 .content h2{
-    color:var(--primary);
-    margin-bottom:20px;
+    font-family:'Inter',sans-serif;
+    font-size:20px;
+    font-weight:500;
+    color:var(--ink-soft);
+    margin-bottom:22px;
 }
 
 .content p{
-    color:var(--light);
-    line-height:30px;
-    margin-bottom:35px;
-    max-width:550px;
+    color:var(--ink-soft);
+    font-size:16px;
+    line-height:28px;
+    margin-bottom:32px;
+    max-width:500px;
 }
 
 .content a{
     display:inline-block;
     text-decoration:none;
-    color:white;
-    background:linear-gradient(135deg,#7c3aed,#ec4899);
-    padding:14px 35px;
-    border-radius:8px;
-    transition:.4s;
+    font-size:14.5px;
+    font-weight:600;
+    padding:13px 28px;
+    border-radius:6px;
+    transition:.2s;
+    margin-right:14px;
+    margin-bottom:10px;
 }
 
-.content a:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(236,72,153,.35);
+.content a:first-of-type{
+    background:var(--primary);
+    color:#ffffff;
+}
+
+.content a:first-of-type:hover{
+    background:#132c41;
+}
+
+.content a:last-of-type{
+    background:transparent;
+    color:var(--primary);
+    border:1px solid var(--border);
+}
+
+.content a:last-of-type:hover{
+    border-color:var(--primary);
 }
 
 .image{
@@ -138,134 +173,191 @@ nav ul li a:hover{
 }
 
 .image img{
-    width:350px;
-    height:350px;
+    width:280px;
+    height:280px;
     object-fit:cover;
-    border-radius:50%;
-    border:5px solid var(--primary);
-    box-shadow:0 0 35px rgba(168,85,247,.45);
+    border-radius:12px;
+    border:1px solid var(--border);
+    box-shadow:0 20px 40px -20px rgba(20,25,35,.25);
 }
 
 /*================ COMMON ================*/
 
 section{
-    padding:90px 8%;
+    padding:80px 8%;
+    max-width:1200px;
+    margin:0 auto;
 }
 
 .title{
-    text-align:center;
-    font-size:40px;
-    color:var(--text);
-    margin-bottom:60px;
-}
-
-.title::after{
-    content:"";
-    display:block;
-    width:90px;
-    height:4px;
-    margin:12px auto;
-    background:linear-gradient(to right,#7c3aed,#ec4899);
-    border-radius:20px;
+    text-align:left;
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:-.01em;
+    color:var(--ink);
+    margin-bottom:40px;
+    padding-left:16px;
+    border-left:3px solid var(--accent);
 }
 
 /*================ ABOUT ================*/
 
 .box{
-    max-width:900px;
-    margin:auto;
-    background:rgba(21,28,47,.9);
-    padding:35px;
-    border-radius:18px;
-    color:var(--light);
-    text-align:center;
-    border:1px solid rgba(255,255,255,.05);
+    max-width:100%;
+    margin:0;
+    background:var(--surface);
+    padding:36px;
+    border-radius:8px;
+    color:var(--ink-soft);
+    text-align:left;
+    border:1px solid var(--border);
+    line-height:27px;
 }
 
 /*================ CARDS ================*/
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
 }
 
 .card,
 .service,
 .project{
-    background:rgba(21,28,47,.9);
-    padding:30px;
-    border-radius:18px;
-    text-align:center;
-    transition:.4s;
-    border:1px solid transparent;
-}
-
-.card:hover,
-.service:hover,
-.project:hover{
-    transform:translateY(-10px);
-    border-color:var(--primary);
-    box-shadow:0 0 25px rgba(168,85,247,.25);
+    background:var(--surface);
+    padding:24px;
+    border-radius:8px;
+    text-align:left;
+    transition:.2s;
+    border:1px solid var(--border);
 }
 
 .card{
-    font-size:20px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:15px;
     font-weight:600;
+    padding:16px 20px;
+}
+
+.card i{
+    font-size:22px;
+    color:var(--primary);
+    flex-shrink:0;
+}
+
+.card h3{
+    font-family:'Inter',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:var(--ink);
+}
+
+.card:hover{
+    border-color:var(--primary);
+}
+
+.service,
+.project{
+    padding:28px;
+}
+
+.service:hover,
+.project:hover{
+    border-color:var(--primary);
+    box-shadow:0 12px 24px -18px rgba(20,25,35,.3);
 }
 
 .service h3,
 .project h3{
-    color:var(--primary);
-    margin-bottom:15px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:18px;
+    font-weight:600;
+    color:var(--ink);
+    margin-bottom:10px;
 }
 
 .service p,
 .project p{
-    color:var(--light);
+    color:var(--ink-soft);
+    font-size:14.5px;
+    line-height:24px;
 }
 
 .project img{
-    width:250px;
-    height:250px;
-    
-    border-radius:10px;
-    margin-bottom:20px;
+    width:400px;
+    height:300px;
+    object-fit:cover;
+    border-radius:6px;
+    margin-bottom:18px;
+    border:1px solid var(--border);
+}
+
+/*================ SKILLS SECTION SPACING ================*/
+
+#skills h2:not(.title){
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.03em;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+    margin-top:8px;
+}
+
+#skills{
+    padding-top:40px;
+    padding-bottom:40px;
 }
 
 /*================ CONTACT ================*/
 
+.contact{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:8px 36px;
+}
+
 .contact p{
-    margin:18px 0;
-    font-size:18px;
-    text-align: center;
+    margin:20px 0;
+    font-size:15.5px;
+    text-align:left;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
 }
 
 .contact i{
-    color:#a855f7;
-    margin-right:10px;
-    font-size:20px;
-    text-align: center;
+    color:var(--primary);
+    margin-right:14px;
+    font-size:17px;
+    width:20px;
+    text-align:center;
 }
 
 .contact a{
-    color:#ffffff;
+    color:var(--ink);
     text-decoration:none;
-    transition:.3s;
-    text-align: center;
+    font-weight:500;
+    transition:.2s;
 }
 
 .contact a:hover{
-    color:#ec4899;
+    color:var(--primary);
 }
 
 /*================ FOOTER ================*/
 
 footer{
-    background:#111827;
+    background:var(--surface);
     text-align:center;
-    padding:20px;
-    color:#d1d5db;
+    padding:26px;
+    color:var(--ink-soft);
+    font-size:13.5px;
+    border-top:1px solid var(--border);
 }
 
 /*================ SCROLLBAR ================*/
@@ -275,7 +367,7 @@ footer{
 }
 
 ::-webkit-scrollbar-thumb{
-    background:linear-gradient(#7c3aed,#ec4899);
+    background:var(--border);
     border-radius:10px;
 }
 
@@ -286,74 +378,53 @@ footer{
 .hero{
     flex-direction:column-reverse;
     text-align:center;
-}
-
-.image img{
-    width:250px;
-    height:250px;
-}
-
-.content h1{
-    font-size:45px;
-}
-
-.content h2{
-    font-size:26px;
+    min-height:auto;
+    padding-top:50px;
 }
 
 .content p{
-    margin:auto;
-    margin-bottom:30px;
+    margin:0 auto 28px;
+}
+
+.content h1{
+    font-size:38px;
+}
+
+.content h2{
+    font-size:18px;
+}
+
+.title{
+    text-align:center;
+    border-left:none;
+    border-top:3px solid var(--accent);
+    padding-left:0;
+    padding-top:14px;
+    display:inline-block;
+}
+
+section{
+    padding:60px 6%;
 }
 
 nav{
     flex-direction:column;
-    gap:15px;
+    gap:14px;
+    padding:16px 6%;
 }
 
 nav ul{
     flex-wrap:wrap;
     justify-content:center;
+    gap:20px;
 }
 
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 }
 
-.card{
-    background:#1f2937;
-    padding:30px;
-    border-radius:15px;
-    text-align:center;
-    transition:.4s;
-}
-
-.card i{
-    font-size:50px;
-    color:#a855f7;
-    margin-bottom:15px;
-    transition:.4s;
-}
-
-.card h3{
-    color:white;
-    font-size:18px;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 20px rgba(168,85,247,.4);
-}
-
-.card:hover i{
-    color:#ec4899;
-    transform:scale(1.2);
-}
-
-.title{
-    font-size:30px;
+.contact p{
+    justify-content:center;
 }
 
 }
@@ -444,9 +515,9 @@ I am a motivated and enthusiastic B.E. Computer Science Engineering student with
 <!-- Skills -->
 
 <section id="skills">
-    <H1 class="title">SKILLS</H1>
+    <h2 class="title">Skills</h2>
 
-    <h2>PROGRAMMING LANGUAGES</h2>
+    <h2>Programming Languages</h2>
 
 
 <div class="cards">
@@ -478,7 +549,7 @@ I am a motivated and enthusiastic B.E. Computer Science Engineering student with
 
 <section id="skills">
 
-<h2>WEB DEVELOPMENT</h2>
+<h2>Web Development</h2>
 
 <div class="cards">
 
@@ -517,7 +588,7 @@ I am a motivated and enthusiastic B.E. Computer Science Engineering student with
 
 <section id="skills">
 
-<h2>TECHNOLOGIES & TOOLS</h2>
+<h2>Technologies &amp; Tools</h2>
 
 <div class="cards">
 
@@ -560,9 +631,9 @@ I am a motivated and enthusiastic B.E. Computer Science Engineering student with
 
 <section id="skills">
 
-<h2>DATABASE MANAGEMENT</h2>
+<h2>Database Management</h2>
 
-<div class="card">
+<div class="card" style="max-width:220px;">
     <i class="fa-solid fa-database"></i>
     <h3>MySQL</h3>
 </div>
@@ -572,7 +643,7 @@ I am a motivated and enthusiastic B.E. Computer Science Engineering student with
 
 <section id="skills">
 
-<h2>SOFT SKILLS</h2>
+<h2>Soft Skills</h2>
 
 
 <div class="cards">
@@ -676,7 +747,7 @@ I am a motivated and enthusiastic B.E. Computer Science Engineering student with
 
     <h3>
         <a href="https://sppropertiesofficial.in/" target="_blank" rel="noopener noreferrer"
-           style="color:#a855f7; text-decoration:none;">
+           style="color:var(--primary); text-decoration:none;">
             SP Properties – Real Estate Website
         </a>
     </h3>
@@ -711,9 +782,9 @@ I am a motivated and enthusiastic B.E. Computer Science Engineering student with
 
 <div class="box">
 
-<h3>B.E Computer Science Engineering</h3>
+<h3 style="font-size:19px;margin-bottom:8px;">B.E Computer Science Engineering</h3>
 
-<p>Tagore Engineering College</p>
+<p style="margin-bottom:2px;">Tagore Engineering College</p>
 
 <p>2023 - 2027</p>
 
@@ -733,9 +804,9 @@ I am a motivated and enthusiastic B.E. Computer Science Engineering student with
 
 <div class="card">HTML & CSS</div> -->
 
-<div class="card">Internship completion certificate
+<div class="card" style="display:block;max-width:340px;">Internship completion certificate
     
-    <img src="CERTIFICATE.png" width="300px" height="350px">
+    <img src="CERTIFICATE.png" width="300px" height="350px" style="margin-top:14px;border-radius:6px;border:1px solid var(--border);">
 </div>
 
 
